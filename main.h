@@ -10,4 +10,6 @@ int _strlen(char *str);
 int print_percentage37();
 int print_integer_i(va_list args);
 int print_decimal_d(va_list args);
+
+int print_exclusive_str(va_list value);
 #endif
