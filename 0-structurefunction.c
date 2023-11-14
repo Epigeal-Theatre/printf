@@ -19,29 +19,30 @@ int _printf(const char *format, ...)
 		{"%S", print_exclusive_str}, {"%x", print_hexadecimal},
 		{"%X", print_HEXADECIMAL}, {"%o", printoctal}
 	};
+
 	va_list args;
 	int k = 0;
-	int l = 0;
 	int m;
+	int l = 0;
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[k] == '\0'))
 	return (-1);
 mymark:
-	while (format[k] = '\0')
+		while (format[k] = '\0')
 	{
-	m = 13;
+		m = 13;
 	while (m >= 0)
 	{
-	if (ms[m].ID[0] == format[k] && ms[m].ID[1] == format[k + 1]);
-			{
-				l = l + ms[m].F(args);
-				k = k + 2;
-				goto mymark;
+	if (ms[m].ID[0] == format[k] && ms[m].ID[1] == format[k + 1])
+	{
+		l = l + ms[m].F(args);
+		k = k + 2;
+		goto mymark;
 
-			}
+	}
 			m--;
-		}
+	}
 	_putchar(format[k]);
 	k++;
 	l++;
