@@ -1,13 +1,22 @@
 #ifndef MAIN_H
 #define MAIN_H
+
+#include <limits.h>
+#include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
 
+typedef struct format
+{
+	int (*F)();
+	char *ID;
+}mystructure;
+
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int printcharacter(va_list value);
+int printcharacter(va_list val);
 int printstring(va_list value);
 int _strlenconst(const char *str);
 int _strlen(char *str);
@@ -20,5 +29,14 @@ int printoctal(va_list val);
 int print_hexadecimal(va_list val);
 int print_HEXADECIMAL(va_list val);
 
-int print_exclusive_str(va_list value);
+int print_exclusive_str(va_list val);
+int print_5.2_upper_hex(unsigned int mynum);
+
+int handlepointers(va_list val);
+int print_6.2_hex(unsigned long int mynum);
+
+
+int print_reversedstring(va_list val);
+
+int printrot13(va_list val);
 #endif

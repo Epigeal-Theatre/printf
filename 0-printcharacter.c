@@ -3,17 +3,17 @@
 /**
  *printcharacter - prints a character char
  *
- *@value: arguments to pass in
+ *@val: arguments to pass in
  *
  *Return: 1
  *
  */
 
-int printcharacter(va_list value)
+int printcharacter(va_list val)
 {
 	char str;
 
-	str = va_arg(value, int);
+	str = va_arg(val, int);
 	_putchar(str);
 	return (1);
 }

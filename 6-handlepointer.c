@@ -1,26 +1,24 @@
 #include "main.h"
 
 /**
+ *handlepointers - handle ponters
  *
+ *@val: placeholder
  *
- *
- *
- *
- *
- *
- *
+ *Return: rtv + 2
  *
  */
 
-int print_pointers(va_list value)
+int handlepointers(va_list val)
 {
 	char *y;
 	void *x;
+
 	int z;
-
 	long int i;
+	int rtv;
 
-	x = va-arg(value, void *);
+	x = va-arg(val, void *);
 	if (x == NULL)
 	{
 		for (z = 0; y[z] != '\0'; z++)
@@ -31,5 +29,10 @@ int print_pointers(va_list value)
 	i = (unsigned long int)x;
 	_putchar('0');
 	_putchar('x');
-	//ADD IN THE FUNC FOR FILE_5.2 AND PASS IN i as the argument
+	rtv = print_6.2_hex(i);
+	return (rtv + 2);
+
+
+
+
 }
