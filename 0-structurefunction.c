@@ -13,7 +13,21 @@
 int _printf(const char *format, ...)
 {
 	mystructure ms[] = {
-		{"%c", printcharacter}, {"%%", }, {"%s", },{"%d", },{"%i", },{"%R", },{"%r"},{"%u", },{"%b", },{"%p", },{"%S"},{"%x", },{"%X", },{"%o", },{},{},{},{},{}
+		{"%c", printcharacter}, 
+		{"%%", print_percentage37},
+	       	{"%s", printstring},
+		{"%d", },
+		{"%i", },
+		{"%R", },
+		{"%r"},
+		{"%u", },
+		{"%b", },
+		{"%p", },
+		{"%S"},
+		{"%x", },
+		{"%X", print_HEXADECIMAL},
+		{"%o", },
+		{},{},{},{},{}
 	};
 	va_list args;
 

@@ -7,6 +7,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ *struct format - fetches functions for our printf
+ *
+ *@ID: our pinter to f
+ *
+ * @F: func that identifies other funcs
+ */
+
 typedef struct format
 {
 	int (*F)();
@@ -17,7 +25,7 @@ typedef struct format
 int _putchar(char c);
 int _printf(const char *format, ...);
 int printcharacter(va_list val);
-int printstring(va_list value);
+int printstring(va_list val);
 int _strlenconst(const char *str);
 int _strlen(char *str);
 int print_percentage37();
