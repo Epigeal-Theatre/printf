@@ -28,7 +28,7 @@ int print_integer_i(va_list args)
 	myNum = -myNum;
 	x = -x;
 	last = -last;
-	x++;
+	i++;
 	}
 	if (myNum > 0)
 	{	while (myNum / 10 != 0)
@@ -42,11 +42,11 @@ int print_integer_i(va_list args)
 	_putchar(digit + '0');
 	myNum = myNum  - (digit * exp);
 	exp = exp / 10;
-	x++;
+	i++;
 	}
 	}
 	_putchar(last + '0');
-	return (1);
+	return (i);
 
 
 }
@@ -54,7 +54,7 @@ int print_integer_i(va_list args)
 
 
 /**
- *print-decimal-d - prints decimal d
+ *print-decimal-d - print decimal d
  *
  *@args: arguments placeholder
  *
@@ -81,12 +81,12 @@ int print_decimal_d(va_list args)
         myNum = -myNum;
         x = -x;
         last = -last;
-        x++;
+        i++;
         }
         if (myNum > 0)
-                while (myNum / 10 != 0)
+	{       while (myNum / 10 != 0)
                 {
-                exp = exp *10;
+                exp = exp * 10;
                 myNum = myNum /10
                 }
         myNum = x;
@@ -95,7 +95,13 @@ int print_decimal_d(va_list args)
         _putchar(digit + '0');
         myNum = myNum  - (digit * exp);
         exp = exp / 10;
-        x++;
+        i++;
         }
+	}
+	_putchar(last + '0');
+	return (i);
+
+
+
 
 }

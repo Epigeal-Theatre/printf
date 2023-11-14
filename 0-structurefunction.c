@@ -16,18 +16,18 @@ int _printf(const char *format, ...)
 		{"%c", printcharacter}, 
 		{"%%", print_percentage37},
 	       	{"%s", printstring},
-		{"%d", },
-		{"%i", },
-		{"%R", },
-		{"%r"},
-		{"%u", },
-		{"%b", },
-		{"%p", },
-		{"%S"},
-		{"%x", },
+		{"%d", print_decimal_d},
+		{"%i", print_integer_i},
+		{"%R", printrot13},
+		{"%r", print_reversedstring},
+		{"%u", handleunsigned_u},
+		{"%b", printbinary},
+		{"%p", handleunsigned_u},
+		{"%S", print_exclusive_str},
+		{"%x", print_hexadecimal},
 		{"%X", print_HEXADECIMAL},
-		{"%o", },
-		{},{},{},{},{}
+		{"%o", }
+		
 	};
 	va_list args;
 
