@@ -2,11 +2,11 @@
 
 /**
  *_putchar- outputs chcharacter to the standard
- output
+ *output
  *
- *@c character to print to stdout
+ *@c: character to print to stdout
  *
- * Return: 1 upon success
+ * Return: 1
  */
 
 int _putchar(char c)

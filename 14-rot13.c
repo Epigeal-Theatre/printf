@@ -18,9 +18,9 @@ int printrot13(va_list val)
 
 	char x[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 	char y[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
-	char *z = va-arg(val, char*);
+	char *z = va_arg(val, char*);
 
-	if (z ==NULL)
+	if (z == NULL)
 		s = "(null)"
 	for (a = 0; z[a]; a++)
 	{
