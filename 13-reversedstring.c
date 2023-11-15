@@ -14,12 +14,12 @@ int print_reversedstring(va_list val)
 {
 	int x;
 	int y;
-	char *Z = va_arg(val, char*);
+	char *z = va_arg(val, char*);
 
 	y = 0;
 
 	if (z == NULL)
-	Z == "(null)";
+	z = "(null)";
 	while (z[y] != '\0')
 	y++;
 	for (x = y - 1; x >= 0; x--)

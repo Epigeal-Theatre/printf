@@ -17,16 +17,16 @@ int printstring(va_list val)
 	str  = va_arg(val, char *);
 	if (str == NULL)
 	{
-	str = (null);
+	str = "(null)";
 	length = _strlen(str);
-	for (x = 0; x < length; x ++)
+	for (x = 0; x < length; x++)
 		_putchar(str[x]);
-	return (length;
+	return (length);
 	}
 	else
 	{
-	lenght = _strlen(str);
-	for (x = 0;x < length; x ++)
+	length = _strlen(str);
+	for (x = 0; x < length; x++)
 		_putchar(str[x]);
 	return (length);
 	}

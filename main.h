@@ -43,8 +43,6 @@ int print_5.2_upper_hex(unsigned int mynum);
 int handlepointers(va_list val);
 int print_6.2_hex(unsigned long int mynum);
 
-
 int print_reversedstring(va_list val);
-
 int printrot13(va_list val);
 #endif
