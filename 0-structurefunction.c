@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[k] == '\0'))
 	return (-1);
-mymark:
+
 		while (format[k] != '\0')
 	{
 		m = 13;
@@ -38,7 +38,8 @@ mymark:
 	{
 		l = l + ms[m].F(args);
 		k = k + 2;
-		goto mymark;
+		break;
+
 
 	}
 			m--;
