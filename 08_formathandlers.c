@@ -69,7 +69,7 @@ int numberwriter(int is_negative, int index, char bf[],
 	else if (fl & FSPACE)
 		extra_ch = ' ';
 
-	return (writemynum(index, bf, fl, wd, pr,
+	return (numwriter(index, bf, fl, wd, pr,
 		leng, pad, extra_ch));
 }
 

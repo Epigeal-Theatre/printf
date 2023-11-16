@@ -105,7 +105,7 @@ int printstring(va_list tp, char bf[], int fl, int wd, int pr, int sz)
 int printpercent(va_list tp, char bf[],
 	int fl, int wd, int pr, int sz)
 {
-	UNUSED(bf), UNUSED(fl), UNUSED(wd), UNUSED(pr), UNUSED(sz);
+	UNUSED(tp), UNUSED(bf), UNUSED(fl), UNUSED(wd), UNUSED(pr), UNUSED(sz);
 	return (write(1, "%%", 1));
 }
 
