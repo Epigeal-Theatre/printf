@@ -1,53 +1,67 @@
 #include "main.h"
+
+void print_buffer(char bf[], int *buff_ind);
+
 /**
- *_printf - this is our printf function
- *
- *@format: this guy fetches the right function
- *...and passes is into our v-funk
- *
- *Return: integers
- *
+ * _printf - Printf function
+ * @format: format.
+ * Return: Printed chars.
  */
 int _printf(const char *format, ...)
 {
-	mystructure ms[] = {
-		{"%c", printcharacter}, {"%%", print_percentage37},
-		{"%s", printstring}, {"%d", print_decimal_d},
-		{"%i", print_integer_i}, {"%R", printrot13},
-		{"%r", print_reversedstring}, {"%u", handleunsigned_u},
-		{"%b", printbinary}, {"%p", handleunsigned_u},
-		{"%S", print_exclusive_str}, {"%x", print_hexadecimal},
-		{"%X", print_HEXADECIMAL}, {"%o", printoctal}
-	};
+	int i, printed = 0, printedch = 0;
+	int fl, wd, pr, sz, buff_ind = 0;
+	va_list list;
+	char bf[BUFFSIZE];
 
-	va_list args;
-	int k = 0;
-	int m;
-	int l = 0;
+	if (format == NULL)
+		return (-1);
 
-	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && format[k] == '\0'))
-	return (-1);
+	va_start(list, format);
 
-		while (format[k] != '\0')
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
-		m = 13;
-	while (m >= 0)
-	{
-	if (ms[m].ID[0] == format[k] && ms[m].ID[1] == format[k + 1])
-	{
-		l = l + ms[m].F(args);
-		k = k + 2;
-		break;
+		if (format[i] != '%')
+		{
+			bf[buff_ind++] = format[i];
+			if (buff_ind == BUFFSIZE)
+				print_buffer(bf, &buff_ind);
+			/* write(1, &format[i], 1);*/
+			printedch++;
+		}
+		else
+		{
+			print_buffer(bf, &buff_ind);
+			fl = fetchflagslags(format, &i);
+			wd = fetchwidth(format, &i, list);
+			pr = fetchprecision(format, &i, list);
+			sz = fetchsize(format, &i);
+			++i;
+			printed = contenthandler(format, &i, list, bf,/*contenthandler*/
+				fl, wd, pr, sz);
+			if (printed == -1)
+				return (-1);
+			printed_chars += printed;
+		}
+	}
 
+	print_buffer(bf, &buff_ind);
 
-	}
-			m--;
-	}
-	_putchar(format[k]);
-	k++;
-	l++;
-	}
-	va_end(args);
-return (l);
+	va_end(list);
+
+	return (printedch);
 }
+
+/**
+ * print_buffer - Prints the contents of the buffer if it exist
+ * @bf: placeholder for arrays
+ * @buff_ind: Index at which to add next char, represents the length.
+ */
+void print_buffer(char bf[], int *buff_ind)
+{
+	if (*buff_ind > 0)
+		write(1, &bf[0], *buff_ind);
+
+	*buff_ind = 0;
+}
+

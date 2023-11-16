@@ -1,48 +1,94 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <limits.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
+
+
+#define FMINUS 1
+#define FPLUS 2
+#define FZERO 4
+#define FHASH 8
+#define FSPACE 16
+
+
+
+#define SLONG 2
+#define SSHORT 1
+
+
+
+#define UNUSED(x) (void)(x)
+#define BUFFSIZE 1024
+
+
 
 /**
- *struct format - fetches functions for our printf
+ * struct fmt - truct stop
  *
- *@ID: our pinter to f
+ * @fmt: our format
  *
- * @F: func that identifies other funcs
+ * @fn: format func
  */
-
-typedef struct format
+struct fmt
 {
-	int (*F)();
-	char *ID;
-}mystructure;
+	char fmt;
+	int (*fn)(va_list, char[], int, int, int, int);
+};
 
 
-int _putchar(char c);
+/**
+ * typedef struct fmt fmt_t - typedef stop
+ *
+ * @fmt: our format.
+ *
+ * @fm_t: format func
+ */
+typedef struct fmt fmt_t;
+
 int _printf(const char *format, ...);
-int printcharacter(va_list val);
-int printstring(va_list val);
-int _strlenconst(const char *str);
-int _strlen(char *str);
-int print_percentage37();
-int print_integer_i(va_list args);
-int print_decimal_d(va_list args);
-int printbinary(va_list val);
-int handleunsigned_u(va_list args);
-int printoctal(va_list val);
-int print_hexadecimal(va_list val);
-int print_HEXADECIMAL(va_list val);
+int intcontenthandler(const char *fmt, int *i,
+va_list list, char bf[], int fl, int wi, int pr, int sz);
 
-int print_exclusive_str(va_list val);
-int print_5.2_upper_hex(unsigned int mynum);
 
-int handlepointers(va_list val);
-int print_6.2_hex(unsigned long int mynum);
 
-int print_reversedstring(va_list val);
-int printrot13(va_list val);
+/*batchfunctions*/
+int printcharacter(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printstring(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printpercent(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printint(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printbinary(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+
+int printunsigned(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printoctals(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printhexadecimals(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printHEXADECIMAL(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printhexadecimallowup(va_list tp, char mpt[],
+		char bf[], int fl, char flc, int wd, int pr, int sz);
+
+int printpointer(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printnonprintable(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printinreverse(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+int printrot13(va_list tp, char bf[], int fl, int wd, int pr, int sz);
+
+
+/*08_formathandlers(handlers of width)*/
+int writehandle_char(char c, char bf[], int fl, int wd, int pr, int sz);
+int numberwriter(int is_negative, int index,
+		char bf[], int fl, int wd, int pr, int sz);
+int numwriter(int index, char bf[], int fl, int wd,
+		int pre, int leng, char pad, char extra_c);
+int unsignedwriter(int is_negative, int index, char bf[],
+		int fl, int wd, int pr, int sz);
+int pointerwrite(char bf[], int index, int leng, int wd,
+		int fl, char pad, char extra_c, int padst);
+
+
+/*09_slit.c functions*/
+int canweprint(char c);
+int apphex(char asc, char bf[], int i);
+int dowehavedigit(char c);
+long int convertsznumber(long int num, int sz);
+long int unsignedszconvert(unsigned long int num, int sz)
 #endif
