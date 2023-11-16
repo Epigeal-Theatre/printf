@@ -90,5 +90,5 @@ int canweprint(char c);
 int apphex(char asc, char bf[], int i);
 int dowehavedigit(char c);
 long int convertsznumber(long int num, int sz);
-long int unsignedszconvert(unsigned long int num, int sz)
+long int unsignedszconvert(unsigned long int num, int sz);
 #endif

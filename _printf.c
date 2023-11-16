@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			print_buffer(bf, &buff_ind);
-			fl = fetchflagslags(format, &i);
+			fl = fetchflags(format, &i);
 			wd = fetchwidth(format, &i, list);
 			pr = fetchprecision(format, &i, list);
 			sz = fetchsize(format, &i);
