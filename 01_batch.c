@@ -21,7 +21,7 @@ int printunsigned(va_list tp, char bf[],
 		int fl, int wd, int pr, int sz)
 {
 	int i = BUFFSIZE - 2;
-	unsigned long int num = va_arg(types, unsigned long int);
+	unsigned long int num = va_arg(tp, unsigned long int);
 
 	num = unsignedszconvert(num, sz);
 
@@ -64,7 +64,7 @@ int printoctals(va_list tp, char bf[],
 {
 
 	int i = BUFFSIZE - 2;
-	unsigned long int num = va_arg(types, unsigned long int);
+	unsigned long int num = va_arg(tp, unsigned long int);
 	unsigned long int init_num = num;
 
 	UNUSED(wd);

@@ -28,10 +28,10 @@ int contenthandler(const char *fmt, int *index, va_list list, char bf[],
 		{'i', printint}, {'d', printint}, {'b', printbinary},
 		{'u', printunsigned}, {'o', printoctals}, {'x', printhexadecimals},
 		{'X', printHEXADECIMAL}, {'p', printpointer}, {'S', printnonprintable},
-		{'r', printreverse}, {'R', printrot13}, {'\0', NULL}
+		{'r', printinreverse}, {'R', printrot13}, {'\0', NULL}
 	};
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
-		if (fmt[*ind] == fmt_types[i].fmt)
+		if (fmt[*index] == fmt_types[i].fmt)
 			return (fmt_types[i].fn(list, bf, fl, wd, pr, sz));
 
 	if (fmt_types[i].fmt == '\0')

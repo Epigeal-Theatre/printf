@@ -48,7 +48,7 @@ struct fmt
 typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
-int intcontenthandler(const char *fmt, int *i,
+int contenthandler(const char *fmt, int *i,
 va_list list, char bf[], int fl, int wi, int pr, int sz);
 
 

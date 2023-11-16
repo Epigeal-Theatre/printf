@@ -96,7 +96,7 @@ int numwriter(int index, char bf[], int fl, int wd,
 		bf[index] = pad = ' ';
 	if (pre > 0 && pre < leng)
 		pad = ' ';
-	while (prec > leng)
+	while (pre > leng)
 		bf[--index] = '0', leng++;
 	if (extra_c != 0)
 		leng++;
@@ -157,7 +157,7 @@ int unsignedwriter(int is_negative,
 
 	while (pr > leng)
 	{
-		bf[--ind] = '0';
+		bf[--index] = '0';
 		leng++;
 	}
 

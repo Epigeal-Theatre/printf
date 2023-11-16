@@ -134,7 +134,7 @@ int printint(va_list tp, char bf[],
 	long int n = va_arg(tp, long int);
 	unsigned long int num;
 
-	n = convert_sznumber(n, sz);
+	n = convertsznumber(n, sz);
 
 	if (n == 0)
 		bf[i--] = '0';
@@ -184,7 +184,7 @@ int printbinary(va_list tp, char bf[],
 
 	UNUSED(bf), UNUSED(fl), UNUSED(wd), UNUSED(pr), UNUSED(sz);
 
-	n = va_arg(types, unsigned int);
+	n = va_arg(tp, unsigned int);
 	m = 2147483648; /* (2 ^ 31) */
 	a[0] = n / m;
 	for (i = 1; i < 32; i++)

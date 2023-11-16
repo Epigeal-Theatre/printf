@@ -21,13 +21,13 @@ int printpointer(va_list tp, char bf[],
 	int fl, int wd, int pr, int sz)
 {
 	char extra_c = 0, pad = ' ';
-	int index  BUFFSIZE - 2, leng = 2, padst = 1;
+	int index = BUFFSIZE - 2, leng = 2, padst = 1;
 
 	unsigned long num_addrs;
 
 	char mpt[] = "0123456789abcdef";
 
-	void *addrs = va_arg(types, void *);
+	void *addrs = va_arg(tp, void *);
 
 	UNUSED(wd), UNUSED(sz);
 
