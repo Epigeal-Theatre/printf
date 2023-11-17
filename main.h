@@ -86,6 +86,13 @@ int pointerwrite(char bf[], int index, int leng, int wd,
 
 
 
+int fetchwidth(const char *format, int *i, va_list list);
+int fetchflags(const char *format, int *i);
+int fetchprecision(const char *format, int *i, va_list list);
+int fetchprecision(const char *format, int *i, va_list list);
+int fetchsize(const char *format, int *i);
+
+
 int canweprint(char c);
 int apphex(char asc, char bf[], int i);
 int dowehavedigit(char c);
