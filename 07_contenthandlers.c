@@ -55,4 +55,3 @@ int contenthandler(const char *fmt, int *index, va_list list, char bf[],
 	}
 	return (printedch);
 }
-

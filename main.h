@@ -49,11 +49,11 @@ typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
 int contenthandler(const char *fmt, int *i,
-va_list list, char bf[], int fl, int wi, int pr, int sz);
+		va_list list, char bf[], int fl, int wd, int pr, int sz);
 
 
 
-/*batchfunctions*/
+
 int printcharacter(va_list tp, char bf[], int fl, int wd, int pr, int sz);
 int printstring(va_list tp, char bf[], int fl, int wd, int pr, int sz);
 int printpercent(va_list tp, char bf[], int fl, int wd, int pr, int sz);
@@ -73,7 +73,7 @@ int printinreverse(va_list tp, char bf[], int fl, int wd, int pr, int sz);
 int printrot13(va_list tp, char bf[], int fl, int wd, int pr, int sz);
 
 
-/*08_formathandlers(handlers of width)*/
+
 int writehandle_char(char c, char bf[], int fl, int wd, int pr, int sz);
 int numberwriter(int is_negative, int index,
 		char bf[], int fl, int wd, int pr, int sz);
@@ -85,7 +85,7 @@ int pointerwrite(char bf[], int index, int leng, int wd,
 		int fl, char pad, char extra_c, int padst);
 
 
-/*09_slit.c functions*/
+
 int canweprint(char c);
 int apphex(char asc, char bf[], int i);
 int dowehavedigit(char c);
