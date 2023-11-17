@@ -12,7 +12,7 @@
  */
 int writehandle_char(char c, char bf[],
 		int fl, int wd, int pr, int sz)
-{ 
+{
 	int i = 0;
 	char pad = ' ';
 
