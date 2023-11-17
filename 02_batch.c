@@ -119,13 +119,16 @@ int printnonprintable(va_list tp, char bf[],
  *
  * Return: how many chars are printed
  */
-int printinreverse(va_list tp, char bf[],
-		int fl, int wd, int pr, int sz)
+int printinreverse(va_list tp, char bf[], int fl,
+		int wd, int pr, int sz)
 {
 	char *str;
 	int i, count = 0;
 
-	UNUSED(bf), UNUSED(fl), UNUSED(wd), UNUSED(sz);
+	UNUSED(bf);
+	UNUSED(fl);
+	UNUSED(wd);
+	UNUSED(sz);
 
 	str = va_arg(tp, char *);
 
